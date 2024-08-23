@@ -21,18 +21,20 @@
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 90%; /* 최대 너비를 화면 너비의 90%로 설정 */
+            box-sizing: border-box;
         }
         #map {
-            width: 900px;
-            height: 1100px;
+            width: 100%;
+            height: 400px;
             background: url('한국지도.png') no-repeat center center;
-            background-size: contain; /* 이미지가 잘리지 않도록 조정 */
+            background-size: contain;
             position: relative;
-            margin: 0 auto; /* 중앙 정렬 */
-            border: 1px solid #ddd; /* 지도 경계선 */
-            border-radius: 8px; /* 경계선 둥글게 */
-            overflow: hidden; /* 경계선 내에 있는 점들만 보이게 함 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .point {
             width: 12px;
@@ -53,6 +55,27 @@
         }
         button:hover {
             background-color: #0056b3;
+        }
+
+        /* 반응형 디자인을 위한 미디어 쿼리 */
+        @media (max-width: 768px) {
+            #map {
+                height: 300px; /* 작은 화면에서 지도 높이 조정 */
+            }
+            button {
+                font-size: 14px; /* 버튼의 폰트 크기 조정 */
+                padding: 8px 16px; /* 버튼의 패딩 조정 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            #map {
+                height: 200px; /* 더 작은 화면에서 지도 높이 조정 */
+            }
+            button {
+                font-size: 12px; /* 버튼의 폰트 크기 조정 */
+                padding: 6px 12px; /* 버튼의 패딩 조정 */
+            }
         }
     </style>
 </head>
